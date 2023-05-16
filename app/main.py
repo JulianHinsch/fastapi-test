@@ -15,10 +15,12 @@ app = FastAPI()
 
 @app.get("/")
 def root():
+    """Returns a hello world message"""
     return "Hello world"
 
 @app.get("/completion/")
 async def completion(question: Union[str, None] = None):
+    """Returns a completion from OPENAI gpt-3.5-turbo given a question"""
     if not OPENAI_API_KEY:
         return "Missing OPENAI_API_KEY environment variable"
     response = await openai.ChatCompletion.acreate(
