@@ -10,6 +10,12 @@
 
 `poetry run uvicorn app.main:app --reload`
 
+The app should now be running at `localhost:8000`
+
+# View documentation
+
+Documentation should be visible at `localhost:8000/docs`
+
 # Build the docker image
 
 `docker build -t myimage .`
